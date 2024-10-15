@@ -1,0 +1,9 @@
+h5 a:hover {
+    color: #ff324d;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ff324d;
+    transition: all 0.3s ease-in-out;
+}

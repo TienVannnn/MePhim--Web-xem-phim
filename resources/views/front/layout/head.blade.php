@@ -20,3 +20,4 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/front/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/cusomize.css') }}">
