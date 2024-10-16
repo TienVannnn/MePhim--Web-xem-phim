@@ -15,10 +15,6 @@
     @include('front.layout.header')
     <!-- Header End -->
 
-    <!-- Breadcrumb Begin -->
-    @include('front.layout.breadcrumb')
-    <!-- Breadcrumb End -->
-
     {{-- content --}}
     @yield('content')
     {{-- end content --}}
