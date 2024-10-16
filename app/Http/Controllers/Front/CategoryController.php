@@ -18,24 +18,25 @@ class CategoryController extends Controller
         $page = $request->query('page', 1);
         $data = $this->categoryService->getData($slug, $page);
 
-        $phimLe = $data['phimLe'] ?? [];
+        $film = $data['film'] ?? [];
         $moiRaMat = $data['moiRaMat'] ?? [];
-        $title = $phimLe['data']['seoOnPage']['titleHead'] ?? '';
-        $totalPage = $phimLe['data']['params']['pagination']['totalPages'] ?? 1;
-        if (!$phimLe) {
+        $title = $film['data']['seoOnPage']['titleHead'] ?? '';
+        $titleBread = $film['data']['breadCrumb'][0]['name'] ?? '';
+        $totalPage = $film['data']['params']['pagination']['totalPages'] ?? 1;
+        if (!$film) {
             abort(404);
         }
         $currentPage = $page;
-        $items = $phimLe['data']['items'] ?? [];
+        $items = $film['data']['items'] ?? [];
         $perPage = 15;
         $pagination = new LengthAwarePaginator(
             $items,
-            $phimLe['data']['params']['pagination']['totalItems'],
+            $film['data']['params']['pagination']['totalItems'],
             $perPage,
             $currentPage,
             ['path' => url()->current()]
         );
 
-        return view('front.category.category', compact('phimLe', 'title', 'moiRaMat', 'pagination'));
+        return view('front.category.category', compact('film', 'title', 'moiRaMat', 'pagination', 'titleBread'));
     }
 }
