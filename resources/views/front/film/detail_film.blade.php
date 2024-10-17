@@ -51,10 +51,18 @@
                                 </div>
                             </div>
                         </div>
+                        @php
+                            $firstEpisode = collect($episodes)->flatMap(function ($server) {
+                                return $server['server_data'];
+                            })->first();
+                        @endphp
                         <div class="anime__details__btn">
                             <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Theo dõi</a>
-                            <a href="#" class="watch-btn"><span>Xem ngay</span><i
-                                class="fa fa-angle-right"></i></a>
+                            @if ($firstEpisode)
+                                <a href="{{ route('watching.film', ['slug' => $movie['slug'], 'episodeSlug' => $firstEpisode['slug']]) }}" class="watch-btn">
+                                    <span>Xem ngay</span><i class="fa fa-angle-right"></i>
+                                </a>
+                            @endif
                             </div>
                         </div>
                     </div>
