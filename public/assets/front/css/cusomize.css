@@ -7,3 +7,7 @@ a:hover {
     color: #ff324d;
     transition: all 0.3s ease-in-out;
 }
+
+.anime__details__episodes .active {
+    background-color: #ff324d;
+}
