@@ -29,7 +29,7 @@
 
 <!-- Js Plugins -->
 @include('front.layout.script')
-
+@yield('scripts');
 </body>
 
 </html>

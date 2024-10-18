@@ -11,3 +11,14 @@ a:hover {
 .anime__details__episodes .active {
     background-color: #ff324d;
 }
+
+.server_data .btn-server {
+    background-color: #ff324d;
+    color: aliceblue;
+    opacity: 0.3;
+}
+.server_data .active {
+    background-color: #ff324d;
+    color: aliceblue;
+    opacity: 1;
+}
