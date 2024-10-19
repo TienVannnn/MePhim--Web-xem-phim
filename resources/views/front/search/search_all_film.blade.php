@@ -46,9 +46,7 @@
                         {{ $pagination->links() }}
                     </div>
                 </div>
-                {{-- @include('front.layout.sidebar') --}}
             </div>
         </div>
 </section>
-<!-- Product Section End -->
 @endsection
