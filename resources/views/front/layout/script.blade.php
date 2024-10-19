@@ -17,3 +17,5 @@
 <script src="{{ asset('assets/front/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/main.js') }}"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0" nonce="HCeMXF0H"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.0/typeahead.bundle.min.js"></script>
+<script src="{{ asset('assets/front/js/search_typeahead.js') }}"></script>

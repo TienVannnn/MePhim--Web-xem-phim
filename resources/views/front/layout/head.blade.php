@@ -21,3 +21,5 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/front/css/cusomize.css') }}">
+    {{-- customize --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/0.2.1/typeaheadjs.css" rel="stylesheet">
