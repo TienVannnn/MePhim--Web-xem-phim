@@ -31,7 +31,7 @@
             </div>
             <div class="col-lg-2">
                 <div class="header__right">
-                    <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                    {{-- <a href="#" class="search-switch"><span class="icon_search"></span></a> --}}
                     <a href="./login.html"><span class="icon_profile"></span></a>
                 </div>
             </div>
@@ -40,17 +40,14 @@
     </div>
 
     <div class="col-lg-4 col-6 search_film col-sm-12">
-        <form action="{{ route('search_film') }}" method="GET" autocomplete="off">
+        <form action="{{ route('search_all_film') }}" method="GET" autocomplete="off">
             <div class="input-group">
-                <input type="text"  class="form-control search-box" name="text" placeholder="Nhập tên phim để tìm kiếm..." >
+                <input type="text"  class="form-control search-box" name="keyword" placeholder="Nhập tên phim để tìm kiếm..." >
                 <div class="input-group-append">
-                    <button type="submit" class=" btn btn-primary" id="search-button">
+                    <button type="submit" class="input-group-text text-primary bg-transparent" id="search-button">
                         <i class="fa fa-search"></i>
                         <span class="loading-spinner" style="display:none;"></span>
                     </button>
-                    {{-- <button type="button" class="btn btn-primary" id="toggle-search">
-                        <i class="fa fa-search"></i>
-                    </button> --}}
                 </div>
             </div>
         </form>
