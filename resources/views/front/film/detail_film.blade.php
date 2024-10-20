@@ -68,6 +68,20 @@
                     </div>
                 </div>
             </div>
+            <div class="anime__details__episodes">
+                <div class="section-title">
+                    <h5>Danh sách tập</h5>
+                </div>
+                @foreach ($episodes as $server)
+                    @if ($loop->first)
+                        @foreach ($server['server_data'] as $tap)
+                            <a href="{{ route('watching.film', ['slug' => $movie['slug'], 'episodeSlug' => $tap['slug']]) }}">
+                                {{ $tap['name'] }}
+                            </a>
+                        @endforeach
+                    @endif
+                @endforeach
+            </div>
             <div class="row">
                 <div class="col-lg-8 col-md-8">
                     <div class="anime__details__review">

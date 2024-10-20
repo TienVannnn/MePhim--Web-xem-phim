@@ -36,15 +36,15 @@
                     <div class="section-title">
                         <h5>Danh sách tập</h5>
                     </div>
-                @foreach ($episodes as $server)
-                    @if ($loop->first)
-                        @foreach ($server['server_data'] as $tap)
-                            <a href="{{ route('watching.film', ['slug' => $movie['slug'], 'episodeSlug' => $tap['slug']]) }}" class="{{ $tap['slug'] == $episode['slug'] ? 'active' : '' }}">
-                                {{ $tap['name'] }}
-                            </a>
-                        @endforeach
-                    @endif
-                @endforeach
+                    @foreach ($episodes as $server)
+                        @if ($loop->first)
+                            @foreach ($server['server_data'] as $tap)
+                                <a href="{{ route('watching.film', ['slug' => $movie['slug'], 'episodeSlug' => $tap['slug']]) }}" class="{{ $tap['slug'] == $episode['slug'] ? 'active' : '' }}">
+                                    {{ $tap['name'] }}
+                                </a>
+                            @endforeach
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

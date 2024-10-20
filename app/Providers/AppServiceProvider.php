@@ -31,5 +31,15 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with(compact('phimLe', 'phimBo', 'hoatHinh', 'tvShows'));
         });
+
+        View::composer('front.layout.footer', function ($view) {
+            $data = app('App\Services\Front\HomeService')->getAllData();
+            $phimLe = $data['phimLe'] ?? [];
+            $phimBo = $data['phimBo'] ?? [];
+            $hoatHinh = $data['hoatHinh'] ?? [];
+            $tvShows = $data['tvShows'] ?? [];
+
+            $view->with(compact('phimLe', 'phimBo', 'hoatHinh', 'tvShows'));
+        });
     }
 }

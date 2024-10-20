@@ -4,19 +4,13 @@
             <div class="section-title">
                 <h5>Phim mới ra mắt</h5>
             </div>
-            {{-- <ul class="filter__controls">
-                <li class="active" data-filter="*">Day</li>
-                <li data-filter=".week">Week</li>
-                <li data-filter=".month">Month</li>
-                <li data-filter=".years">Years</li>
-            </ul> --}}
             <div class="filter__gallery">
                 @foreach ($moiRaMat['items'] as $item)
                     <div class="product__sidebar__view__item set-bg mix day years"
                     data-setbg="{{ $item['poster_url'] }}">
-                    <div class="ep">18 / ?</div>
-                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                    <h5><a href="#">{{ $item['name'] }}</a></h5>
+                    <div class="ep">{{ $item['year'] }}</div>
+                    <div class="view"><i class="fa fa-eye"></i> {{ $item['origin_name'] }}</div>
+                    <h5><a href="{{ route('detail.film', $item['slug']) }}">{{ $item['name'] }}</a></h5>
                 </div>
                 @endforeach
             </div>
