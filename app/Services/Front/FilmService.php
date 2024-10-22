@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 class FilmService{
     public function getData($slug){
         $res = Http::get('https://phimapi.com/phim/'. $slug);
-        if($res -> ok()){
+        if($res['status']){
             return $res -> json();
         }
         return null;
