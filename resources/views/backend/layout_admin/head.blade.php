@@ -30,5 +30,6 @@
     <link href="/assets/backend/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{{ asset('assets/backend/css/customize.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @routes()

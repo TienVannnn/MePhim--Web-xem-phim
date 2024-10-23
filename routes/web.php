@@ -14,6 +14,7 @@ use App\Http\Controllers\Front\CategoryController;
 Route::get('/admin/login', [BackendAuthController::class, 'form_login'])->name('login');
 Route::post('/admin/login', [BackendAuthController::class, 'login'])->name('handle-login');
 Route::middleware('auth:manager')->prefix('/admin')->group(function () {
+    Route::get('/logout', [BackendAuthController::class, 'logout'])->name('logout.admin');
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 });
 
