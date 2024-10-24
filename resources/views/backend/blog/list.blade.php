@@ -1,4 +1,4 @@
-@extends('admin.layout_admin.main')
+@extends('backend.layout_admin.main')
 
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

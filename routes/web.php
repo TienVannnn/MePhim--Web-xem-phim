@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\Backend\AuthController as BackendAuthController;
-use App\Http\Controllers\Backend\BlogController;
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\ManagerController;
-use App\Http\Controllers\Front\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Front\FilmController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Front\GoogleController;
 use App\Http\Controllers\Front\SearchController;
 use App\Http\Controllers\Front\CategoryController;
+use App\Http\Controllers\Backend\ManagerController;
+use App\Http\Controllers\Backend\ReusableController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\AuthController as BackendAuthController;
 
 #Backend
 Route::get('/admin/login', [BackendAuthController::class, 'form_login'])->name('login');
@@ -23,6 +24,8 @@ Route::middleware('auth:manager')->prefix('/admin')->group(function () {
     #Quản lý bài viết
     Route::resource('/blog', BlogController::class);
 });
+#Change Status
+Route::post('/change-status/{id}/{slug}', [ReusableController::class, 'changeStatus'])->name('reusable.changeStatus');
 
 
 
@@ -46,3 +49,9 @@ Route::get('/danh-sach-{slug}', [CategoryController::class, 'category'])->name('
 Route::get('/watch/{slug}/{episodeSlug}', [FilmController::class, 'film_watching'])->name('watching.film');
 Route::get('/search-film', [SearchController::class, 'search_all_film'])->name('search_all_film');
 Route::get('/{slug}', [FilmController::class, 'detail_film'])->name('detail.film');
+
+
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});

@@ -1,27 +1,27 @@
-@extends('admin.layout_admin.main')
+@extends('backend.layout_admin.main')
 
 @section('content')
 <div class="col-sm-12 col-xl-10 col-md-10 mt-4 m-auto">
     <div class="bg-light rounded h-100 p-4">
-        <h5 class="mb-4 text-uppercase">Thêm mới thương hiệu sản phẩm</h5>
-        @include('admin.layout_admin.alert')
-        <form action="{{ route('brand.store') }}" method="POST" enctype="multipart/form-data">
+        <h5 class="mb-4 text-uppercase">Thêm mới bài viết</h5>
+        @include('backend.layout_admin.alert')
+        <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="name" onkeyup="ChangeToSlug()" id="slug" value="{{ old('name') }}" >
-                <label for="slug">Tên thương hiệu</label>
+                <label for="slug">Tên bài viết</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="slug" id="convert_slug" value="{{ old('slug') }}">
-                <label for="convert_slug">Slug thương hiệu</label>
+                <label for="convert_slug">Slug bài viết</label>
             </div>
             <div class="form-floating mb-3">
-                <p>Ảnh thương hiệu</p>
+                <p>Ảnh bài viết</p>
                 <input type="file" name="image" value="{{ old('image') }}" required>
             </div>
             <div class="form-floating mb-3">
-                <span>Mô tả thương hiệu</span>
-                <textarea class="form-control" name="description" id="des">{{ old('description') }}</textarea>
+                <span>Nội dung</span>
+                <textarea class="form-control" name="content" id="des">{{ old('content') }}</textarea>
             </div>
             <div class="mb-3">
                 <label>Active</label>
@@ -34,8 +34,8 @@
                         <label for="no_active" class="custom-control-label">No</label>
                     </div>
             </div>
-            <button type="submit" name="add" class="btn btn-primary">Thêm thương hiệu</button>
-            <a href="{{ route('brand.index') }}" class="btn btn-success"><< Quay lại</a>
+            <button type="submit" name="add" class="btn btn-primary">Thêm bài viết</button>
+            <a href="{{ route('blog.index') }}" class="btn btn-success"><< Quay lại</a>
         </form>
     </div>
 </div>
