@@ -9,4 +9,10 @@ use Illuminate\Notifications\Notifiable;
 class Manager extends Authenticatable
 {
     use HasFactory, Notifiable;
+    protected $fillable = [
+        'name',
+        'phone',
+        'email',
+        'password'
+    ];
 }

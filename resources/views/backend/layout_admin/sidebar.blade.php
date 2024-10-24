@@ -17,30 +17,22 @@
             <a href="{{ route('admin.dashboard') }}" class="nav-item nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <i class="fa fa-tachometer-alt me-2"></i>Dashboard
             </a>
-            {{-- Category --}}
-            {{-- <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('category.*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Danh mục</a>
+            {{-- Quản lý thành viên --}}
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('manager.*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-users me-2"></i>Quản lý nhân viên</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{ route('category.create') }}" class="dropdown-item {{ request()->routeIs('category.create') ? 'active' : '' }}"><i class="fa fa-plus me-2"></i> Thêm mới danh mục</a>
-                    <a href="{{ route('category.index') }}" class="dropdown-item {{ request()->routeIs('category.index') ? 'active' : '' }}"><i class="fa fa-list me-2"></i> Danh sách danh mục</a>
+                    <a href="{{ route('manager.create') }}" class="dropdown-item {{ request()->routeIs('manager.create') ? 'active' : '' }}"><i class="fa fa-plus me-2"></i> Thêm mới nhân viên</a>
+                    <a href="{{ route('manager.index') }}" class="dropdown-item {{ request()->routeIs('manager.index') ? 'active' : '' }}"><i class="fa fa-list me-2"></i> Danh sách nhân viên</a>
                 </div>
-            </div> --}}
-            {{-- Brand --}}
-            {{-- <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('brand.*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Thương hiệu</a>
+            </div>
+            {{-- Quản lý blog --}}
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('blog.*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-blog me-2"></i>Quản lý bài viết</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{ route('brand.create') }}" class="dropdown-item {{ request()->routeIs('brand.create') ? 'active' : '' }}"><i class="fa fa-plus me-2"></i> Thêm mới thương hiệu</a>
-                    <a href="{{ route('brand.index') }}" class="dropdown-item {{ request()->routeIs('brand.index') ? 'active' : '' }}"><i class="fa fa-list me-2"></i> Danh sách thương hiệu</a>
+                    <a href="{{ route('blog.create') }}" class="dropdown-item {{ request()->routeIs('blog.create') ? 'active' : '' }}"><i class="fa fa-plus me-2"></i> Thêm mới bài viết</a>
+                    <a href="{{ route('blog.index') }}" class="dropdown-item {{ request()->routeIs('blog.index') ? 'active' : '' }}"><i class="fa fa-list me-2"></i> Danh sách bài viết</a>
                 </div>
-            </div> --}}
-            {{-- Collection --}}
-            {{-- <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('collection.*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Bộ sưu tập</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{ route('collection.create') }}" class="dropdown-item {{ request()->routeIs('collection.create') ? 'active' : '' }}"><i class="fa fa-plus me-2"></i> Thêm mới bộ sưu tập</a>
-                    <a href="{{ route('collection.index') }}" class="dropdown-item {{ request()->routeIs('collection.index') ? 'active' : '' }}"><i class="fa fa-list me-2"></i> Danh sách bộ sưu tập</a>
-                </div>
-            </div> --}}
+            </div>
             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
             <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>

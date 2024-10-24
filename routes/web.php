@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\AuthController as BackendAuthController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ManagerController;
 use App\Http\Controllers\Front\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\FilmController;
@@ -16,6 +18,10 @@ Route::post('/admin/login', [BackendAuthController::class, 'login'])->name('hand
 Route::middleware('auth:manager')->prefix('/admin')->group(function () {
     Route::get('/logout', [BackendAuthController::class, 'logout'])->name('logout.admin');
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+    #Quản lý nhân viên
+    Route::resource('/manager', ManagerController::class);
+    #Quản lý bài viết
+    Route::resource('/blog', BlogController::class);
 });
 
 
