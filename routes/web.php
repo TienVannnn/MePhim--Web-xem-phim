@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ManagerController;
 use App\Http\Controllers\Backend\ReusableController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AuthController as BackendAuthController;
+use App\Http\Controllers\Front\BlogController as FrontBlogController;
 
 #Backend
 Route::get('/admin/login', [BackendAuthController::class, 'form_login'])->name('login');
@@ -48,6 +49,8 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/danh-sach-{slug}', [CategoryController::class, 'category'])->name('category');
 Route::get('/watch/{slug}/{episodeSlug}', [FilmController::class, 'film_watching'])->name('watching.film');
 Route::get('/search-film', [SearchController::class, 'search_all_film'])->name('search_all_film');
+Route::get('/blogs', [FrontBlogController::class, 'index'])->name('front.blogs');
+Route::get('/blogs/{slug}', [FrontBlogController::class, 'blog'])->name('front.blog');
 Route::get('/{slug}', [FilmController::class, 'detail_film'])->name('detail.film');
 
 

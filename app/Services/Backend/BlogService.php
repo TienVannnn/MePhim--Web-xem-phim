@@ -3,6 +3,7 @@
 namespace App\Services\Backend;
 
 use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -23,7 +24,7 @@ class BlogService
             $new_image = time() . '_' . $image->getClientOriginalName();
             $path = './uploads/blogs/';
 
-            $data = array_merge($request->except('image'), ['image' => $new_image]);
+            $data = array_merge($request->except('image'), ['manager_id' => Auth::guard('manager')->user()->id], ['image' => $new_image]);
             Blog::create($data);
 
             DB::commit();

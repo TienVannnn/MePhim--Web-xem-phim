@@ -13,6 +13,11 @@ class Blog extends Model
         'slug',
         'image',
         'content',
+        'manager_id',
         'active'
     ];
+    public function author()
+    {
+        return $this->hasOne(Manager::class, 'id', 'manager_id');
+    }
 }

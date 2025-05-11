@@ -174,3 +174,7 @@ a:hover {
         width: 100%;
     }
 }
+
+.text-black {
+    color: black !important;
+}

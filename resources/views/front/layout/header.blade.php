@@ -51,7 +51,7 @@
             </div>
             <div class="col-lg-2">
                 <div class="header__right">
-                    <a href="" title="Bài viết"><i class="fa fa-comment"></i></a>
+                    <a href="{{ route('front.blogs') }}" title="Bài viết"><i class="fa fa-comment"></i></a>
                     @if(Auth::user())
                         <a href="{{ route('front.user.profile') }}" title="Hồ sơ"><span class="icon_profile"></span></a>
                     @else

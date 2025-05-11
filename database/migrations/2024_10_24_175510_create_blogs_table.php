@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('image');
-            $table->text('content');
+            $table->longText('content');
+            $table->unsignedBigInteger('manager_id');
+            $table->foreign('manager_id')->references('id')->on('managers')->onDelete('casecade');
             $table->integer('active')->default(1);
             $table->timestamps();
         });
